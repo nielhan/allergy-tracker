@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>알러지한알 데이터 삭제 안내</title>
+<style>
+  :root {
+    --yolk: #E8A200;
+    --shell: #FFFDF5;
+    --ink: #2A2A2A;
+    --muted: #6B6B6B;
+    --border: #ECE6D6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    background: var(--shell);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  header {
+    background: var(--yolk);
+    color: white;
+    padding: 36px 24px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 4px; font-size: 1.6rem; }
+  header p { margin: 0; font-size: 0.9rem; opacity: 0.95; }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+  h2 {
+    margin-top: 2.2rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.2rem;
+  }
+  h3 { font-size: 1.02rem; margin-top: 1.4rem; color: var(--ink); }
+  p, ul, ol { margin: 0.6rem 0; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: 0.3rem 0; }
+  a { color: var(--yolk); }
+  strong { color: var(--ink); }
+  .nav-back {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .nav-back:hover { color: var(--yolk); }
+  .callout {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--yolk);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>데이터 삭제 안내</h1>
+  <p>앱 이름: 알러지한알 (Daily Allergy Bite) · 개발자: monko</p>
+</header>
+<main>
+  <a href="index.html" class="nav-back">← 홈으로</a>
+
+  <p>
+    "알러지한알"은 <strong>로그인 없이 모든 데이터를 사용자의 기기에만 저장</strong>하는 앱입니다.
+    외부 서버에 개인 식별 데이터를 보관하지 않으므로 별도의 삭제 요청 양식이 필요하지 않으며,
+    사용자가 직접 기기에서 즉시 삭제할 수 있습니다.
+  </p>
+
+  <h2>1. 삭제되는 데이터 유형</h2>
+  <ul>
+    <li>매일의 복용 기록 (날짜·용량·상태·메모)</li>
+    <li>치료 단계 설정 (시작일·1회 용량·단위)</li>
+    <li>알림 시간 설정</li>
+    <li>선택 언어 등 앱 환경설정</li>
+    <li><code>Download/AllergyTracker/</code> 폴더의 자동 CSV 백업 파일</li>
+  </ul>
+
+  <h2>2. 전체 데이터 삭제 방법</h2>
+
+  <h3>방법 A — 앱 제거 (가장 간단, 권장)</h3>
+  <ol>
+    <li>Android 홈 화면에서 "알러지한알" 앱 아이콘을 길게 누름</li>
+    <li>"앱 정보" 또는 "제거" 선택 → "제거" 확인</li>
+  </ol>
+  <div class="callout">
+    앱 제거 시 <strong>기기 내부 저장소의 모든 기록 즉시 삭제</strong>됩니다.
+    단 <code>Download/AllergyTracker/</code> 폴더의 CSV 백업은 공용 저장소라 남을 수 있어요. 아래 "방법 C" 참고.
+  </div>
+
+  <h3>방법 B — 앱 데이터만 삭제 (앱은 남기고 기록만 초기화)</h3>
+  <ol>
+    <li>Android 설정 → 앱 → 알러지한알 → 저장공간</li>
+    <li>"데이터 삭제" 선택 → 확인</li>
+  </ol>
+
+  <h3>방법 C — CSV 백업 파일 수동 삭제</h3>
+  <ol>
+    <li>기본 파일 앱(내 파일 / Files by Google) 실행</li>
+    <li><code>내부 저장공간/Download/AllergyTracker/</code> 폴더 이동</li>
+    <li>해당 폴더 전체 삭제</li>
+  </ol>
+
+  <h2>3. 광고 ID 삭제·재설정</h2>
+  <p>
+    앱은 Google AdMob 을 통해 배너 광고를 노출하며, 이때 기기의 광고 ID(AAID)가 Google 에 전송됩니다.
+    광고 ID 재설정은 Android 시스템에서 직접 수행합니다:
+  </p>
+  <ol>
+    <li>Android 설정 → 개인정보 (또는 보안 및 개인정보) → 광고</li>
+    <li>"광고 ID 재설정" 또는 "광고 ID 삭제" 선택</li>
+  </ol>
+  <p>
+    광고 ID 관련 상세 내용은 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 광고 정책</a> 참고.
+  </p>
+
+  <h2>4. 보관 기간</h2>
+  <ul>
+    <li><strong>앱 내부 데이터</strong>: 사용자가 앱을 제거하거나 데이터 삭제를 수행하면 <strong>즉시 삭제</strong>되며 추가 보관 기간은 없습니다.</li>
+    <li><strong>CSV 자동 백업</strong>: 최근 7개만 기기에 유지, 8개째부터는 앱이 자동 정리.</li>
+    <li><strong>외부 서버 보관</strong>: 해당 없음 — 앱은 사용자 기록을 외부로 전송하지 않습니다.</li>
+  </ul>
+
+  <h2>5. 문의</h2>
+  <p>
+    추가 질문이나 요청은 <a href="mailto:hne8936@gmail.com">hne8936@gmail.com</a> 으로 연락 부탁드립니다.
+  </p>
+
+  <p style="margin-top: 2rem; color: var(--muted); font-size: 0.9rem;">
+    최종 수정일: 2026년 4월 23일
+  </p>
+</main>
+<footer>© 2026 알러지한알</footer>
+</body>
+</html>
